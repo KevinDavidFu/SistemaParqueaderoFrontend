@@ -9,10 +9,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class TarifaDTO {
-    private Integer id;
-    private String tipo;
+public class CobroResponseDTO {
+    private Boolean success;
+    private String message;
+    private Double total;
+    private Double horas;
     private Double precioPorHora;
-    private Boolean activa;
-    private String creadoEn;
+    private String vehiculo;
 }
