@@ -1,0 +1,42 @@
+
+# PROYECTO: SistemaParqueaderoFrontend
+# Ignorar archivos y carpetas generadas
+
+
+# === Gradle ===
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# === IDEs ===
+.idea/
+*.iml
+*.iws
+.vscode/
+.project
+.classpath
+.settings/
+
+# === Spring Boot / Maven ===
+/target/
+
+# === Java ===
+*.class
+*.jar
+*.war
+*.ear
+
+# === Logs ===
+*.log
+
+# === Sistema (Windows / macOS) ===
+.DS_Store
+Thumbs.db
+
+# === Archivos temporales / backups ===
+*.tmp
+*.bak
+*.swp
+
+# === Configuración local ===
+application-local.properties
