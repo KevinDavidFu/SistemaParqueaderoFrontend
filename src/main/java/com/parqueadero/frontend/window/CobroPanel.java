@@ -21,7 +21,7 @@ public class CobroPanel extends JPanel {
     
     private JComboBox<String> comboVehiculos;
     private JTextArea txtResultado;
-    private Map<String, String> vehiculoPlacaMap;
+    private final Map<String, String> vehiculoPlacaMap;
 
     public CobroPanel(CobroApiClient cobroService, VehiculoApiClient vehiculoService) {
         this.cobroService = cobroService;
@@ -110,7 +110,7 @@ public class CobroPanel extends JPanel {
             
             int count = 0;
             for (VehiculoDTO v : vehiculos) {
-                if (v.getActivo()) {
+                if (v.getActivo() != null && v.getActivo()) {
                     String display = String.format("%s - %s (%s)", 
                         v.getPlaca(), 
                         v.getTipo(), 
@@ -162,7 +162,7 @@ public class CobroPanel extends JPanel {
         try {
             CobroResponseDTO response = cobroService.registrarSalida(placa);
             
-            if (response.getSuccess()) {
+            if (response.getSuccess() != null && response.getSuccess()) {
                 String resultado = String.format("""
                     ═══════════════════════════════════════════════════
                     ✓ COBRO REALIZADO EXITOSAMENTE
