@@ -1,5 +1,6 @@
 package com.parqueadero.frontend.dto;
 
+
 public class CobroResponseDTO {
     private Boolean success;
     private String message;

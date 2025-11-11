@@ -1,5 +1,6 @@
 package com.parqueadero.frontend.dto;
 
+
 public class VehiculoDTO {
     private Integer id;
     private String placa;

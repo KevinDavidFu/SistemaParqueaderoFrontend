@@ -1,7 +1,7 @@
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '3.2.0'
-	id 'io.spring.dependency-management' version '1.1.4'
+    id 'java'
+    id 'org.springframework.boot' version '3.2.0'
+    id 'io.spring.dependency-management' version '1.1.4'
 }
 
 group = 'com.parqueadero'
@@ -9,41 +9,42 @@ version = '1.0.0'
 description = 'Frontend Swing para Sistema de Parqueadero'
 
 java {
-	sourceCompatibility = '17'
-	targetCompatibility = '17'
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
 }
 
 configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
 }
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:4.1.0'
-	
-	// Lombok - versión específica y configuración correcta
-	compileOnly 'org.projectlombok:lombok:1.18.30'
-	annotationProcessor 'org.projectlombok:lombok:1.18.30'
-	
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:4.1.0'
+
+    // ✅ Lombok compatible con Java 21
+    compileOnly 'org.projectlombok:lombok:1.18.34'
+    annotationProcessor 'org.projectlombok:lombok:1.18.34'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
 
-// Configuración explícita del compilador
+// Opcional: advertencias del compilador
 tasks.withType(JavaCompile) {
-	options.encoding = 'UTF-8'
-	options.compilerArgs += [
-		'-parameters',
-		'-Xlint:unchecked',
-		'-Xlint:deprecation'
-	]
+    options.encoding = 'UTF-8'
+    options.compilerArgs += [
+        '-parameters',
+        '-Xlint:unchecked',
+        '-Xlint:deprecation'
+    ]
 }

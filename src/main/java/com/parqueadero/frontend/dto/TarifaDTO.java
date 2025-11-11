@@ -1,5 +1,6 @@
 package com.parqueadero.frontend.dto;
 
+
 public class TarifaDTO {
     private Integer id;
     private String tipo;
