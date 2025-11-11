@@ -1,7 +1,6 @@
 package com.parqueadero.frontend;
 
 import com.parqueadero.frontend.window.MainFrame;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,15 +10,11 @@ import org.springframework.core.annotation.Order;
 import javax.swing.*;
 
 /**
- * 
- * Esta clase inicia el contexto de Spring Boot y luego muestra
+ * Clase principal que inicia el contexto de Spring Boot y muestra
  * la interfaz gráfica de Swing en el Event Dispatch Thread.
  */
 @SpringBootApplication
 public class FrontendApplication {
-
-    @Autowired
-    private MainFrame mainFrame;
 
     public static void main(String[] args) {
         // Desactivar modo headless para permitir GUI
